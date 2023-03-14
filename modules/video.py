@@ -10,13 +10,13 @@ def sort(video_link):
 	
 	print(f"\n[ Video ] : {yt.title}")
 	print(f"[ Thumbnail ] : {yt.thumbnail_url}")
-
 	
 	while True:
 		thumb = input("Save the thumbnail? (Y(y)/N(n))\n")
 		if thumb == "y" or thumb == "Y":
 			ext='jpg'
-			system(f"bash ./modules/get_thumbnail.sh {yt.thumbnail_url} {yt.title.replace(' ','_')} {ext}")
+			
+			os.system(f"bash ./modules/get_thumbnail.sh {yt.thumbnail_url} {yt.title.replace(' ','_')} {ext} {folder}")
 			break;
 		elif thumb == "n" or thumb == "N":
 			print("ss")
@@ -46,10 +46,13 @@ def download(video, video_resolutions):
 			
 			if 1 <= choice < i:
 				resolution=video_resolutions[choice-1]
-				
+				#os.system(f"mkdir -p ~/Downloads/{video[choice - 1].title.replace(' ', '_')}")
 				print(f"{resolution} is now downloading...")
+				#video[choice - 1].download(filename=f"{resolution}_{video[choice - 1].title}")
 				
 				video[choice - 1].download(filename=f"{resolution}_{video[choice - 1].title}")
+				
+				#os.system(f"mv {resolution}_{video[choice - 1].title} ~/Downloads/{video[choice - 1].title.replace(' ', '_')}/")
 				
 				print("DONE!")
 				

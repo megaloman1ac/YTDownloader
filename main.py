@@ -14,6 +14,5 @@ def checking(link):
 system("clear")
 
 link = input("[ LINK ] > ")
-folder = input("\nEnter the folder to save the videos data\n(Full path or use '~' for home directory)\n> ")
 
 checking(link)
