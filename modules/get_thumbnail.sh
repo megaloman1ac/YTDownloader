@@ -7,7 +7,7 @@ fname=$2
 
 ext=$3
 
-mkdir -p $4
+#mkdir -p $4
 
 mv "$filename" "$fname.$ext"
-mv "$fname.$ext" $4
+#mv "$fname.$ext" $4
